@@ -28,3 +28,6 @@ Route::get('/rubens', function () {
 Route::get('/webmapp', function () {
     return 'Webmapp';
 });
+Route::get('/peppe', function () {
+    return 'Giuseppe Bonfanti';
+});
