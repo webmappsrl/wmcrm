@@ -25,3 +25,6 @@ Route::get('/gennaro', function () {
 Route::get('/rubens', function () {
     return 'Rubens Garofalo';
 });
+Route::get('/webmapp', function () {
+    return 'Webmapp';
+});
