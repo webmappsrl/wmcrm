@@ -22,3 +22,6 @@ Route::get('/alessio', function () {
 Route::get('/gennaro', function () {
     return 'Gennaro Manzo';
 });
+Route::get('/rubens', function () {
+    return 'Rubens Garofalo';
+});
