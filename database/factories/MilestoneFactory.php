@@ -13,8 +13,11 @@ class MilestoneFactory extends Factory
      */
     public function definition()
     {
+        // name, descrption, expire
         return [
-            //
+            'name' => $this->faker->name(),
+            'description' => $this->faker->sentence(30,true),
+            'expire' => $this->faker->date(),
         ];
     }
 }
