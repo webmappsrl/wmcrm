@@ -19,3 +19,6 @@ Route::get('/', function () {
 Route::get('/alessio', function () {
     return 'Alessio Piccioli';
 });
+Route::get('/gennaro', function () {
+    return 'Gennaro Manzo';
+});
