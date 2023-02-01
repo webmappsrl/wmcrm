@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateStoriesTable extends Migration
+class AddEpicIdToStoriesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,8 @@ class CreateStoriesTable extends Migration
      */
     public function up()
     {
-        Schema::create('stories', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
-            $table->string('name');
-            $table->text('description')->nullable();
-            $table->unsignedBigInteger('epic_id');
+        Schema::table('stories', function (Blueprint $table) {
+            $table->bigInteger('epic_id');
             $table->foreign('epic_id')->references('id')->on('epics');
         });
     }
@@ -30,6 +26,9 @@ class CreateStoriesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('stories');
+        Schema::table('stories', function (Blueprint $table) {
+            $table->dropForeign(['epic_id']);
+            $table->dropColumn('epic_id');
+        });
     }
 }

@@ -8,4 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class Epic extends Model
 {
     use HasFactory;
+
+    public function stories()
+    {
+        return $this->hasMany(Story::class);
+    }
 }
