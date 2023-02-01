@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 class MilestoneFactory extends Factory
@@ -16,8 +17,9 @@ class MilestoneFactory extends Factory
         // name, descrption, expire
         return [
             'name' => $this->faker->name(),
-            'description' => $this->faker->sentence(30,true),
+            'description' => $this->faker->sentence(30, true),
             'expire' => $this->faker->date(),
+            'user_id' => User::all()->random()->id,
         ];
     }
 }
