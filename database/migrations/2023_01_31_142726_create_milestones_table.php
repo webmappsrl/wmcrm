@@ -21,7 +21,7 @@ class CreateMilestonesTable extends Migration
             $table->text('description')->nullable();
             $table->date('expire')->nullable();
             $table->unsignedBigInteger('user_id');
-            $table->foreign('user_id')->references('id')->on('users');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
         });
     }
 
