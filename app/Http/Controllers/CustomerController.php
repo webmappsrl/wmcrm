@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\StoreMilestoneRequest;
-use App\Http\Requests\UpdateMilestoneRequest;
-use App\Models\Milestone;
+use App\Http\Requests\StoreCustomerRequest;
+use App\Http\Requests\UpdateCustomerRequest;
+use App\Models\Customer;
 
-class MilestoneController extends Controller
+class CustomerController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -31,10 +31,10 @@ class MilestoneController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \App\Http\Requests\StoreMilestoneRequest  $request
+     * @param  \App\Http\Requests\StoreCustomerRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StoreMilestoneRequest $request)
+    public function store(StoreCustomerRequest $request)
     {
         //
     }
@@ -42,10 +42,10 @@ class MilestoneController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Milestone  $milestone
+     * @param  \App\Models\Customer  $customer
      * @return \Illuminate\Http\Response
      */
-    public function show(Milestone $milestone)
+    public function show(Customer $customer)
     {
         //
     }
@@ -53,10 +53,10 @@ class MilestoneController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Milestone  $milestone
+     * @param  \App\Models\Customer  $customer
      * @return \Illuminate\Http\Response
      */
-    public function edit(Milestone $milestone)
+    public function edit(Customer $customer)
     {
         //
     }
@@ -64,11 +64,11 @@ class MilestoneController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \App\Http\Requests\UpdateMilestoneRequest  $request
-     * @param  \App\Models\Milestone  $milestone
+     * @param  \App\Http\Requests\UpdateCustomerRequest  $request
+     * @param  \App\Models\Customer  $customer
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateMilestoneRequest $request, Milestone $milestone)
+    public function update(UpdateCustomerRequest $request, Customer $customer)
     {
         //
     }
@@ -76,10 +76,10 @@ class MilestoneController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Milestone  $milestone
+     * @param  \App\Models\Customer  $customer
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Milestone $milestone)
+    public function destroy(Customer $customer)
     {
         //
     }
