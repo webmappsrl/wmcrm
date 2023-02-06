@@ -14,6 +14,9 @@ class MilestoneFactory extends Factory
      */
     public function definition()
     {
+        if (User::count() == 0) {
+            User::factory(10)->create();
+        }
         // name, descrption, expire
         return [
             'name' => $this->faker->name(),
