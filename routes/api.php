@@ -1,5 +1,7 @@
 <?php
 
+use Database\Seeders\EpicSeeder;
+use App\Models\Epic;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Resources\MilestoneResource;
@@ -20,6 +22,9 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
+Route::get('/epics', function () {
+    return Epic::select('name', 'description')->get();
+});
 Route::get('/milestone', function () {
     $milestone = App\Models\Milestone::all();
     return response()->json($milestone);
