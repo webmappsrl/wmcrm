@@ -1,8 +1,8 @@
 <?php
 
-use Illuminate\Database\Migrations\Migration;
-use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Database\Migrations\Migration;
 
 class CreateStoriesTable extends Migration
 {
@@ -17,9 +17,8 @@ class CreateStoriesTable extends Migration
             $table->id();
             $table->timestamps();
             $table->string('name');
-            $table->text('description')->nullable();
-            $table->unsignedBigInteger('epic_id');
-            $table->foreign('epic_id')->references('id')->on('epics');
+            //$table->text('description')->nullable();
+            //$table->foreign('epic_id')->references('id')->on('epics')->onDelete('cascade');
         });
     }
 

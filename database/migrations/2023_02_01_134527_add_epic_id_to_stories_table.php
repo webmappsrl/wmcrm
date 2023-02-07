@@ -14,8 +14,8 @@ class AddEpicIdToStoriesTable extends Migration
     public function up()
     {
         Schema::table('stories', function (Blueprint $table) {
-            $table->bigInteger('epic_id');
-            $table->foreign('epic_id')->references('id')->on('epics');
+            $table->unsignedBigInteger('epic_id')->nullable();
+            $table->foreign('epic_id')->references('id')->on('epics')->onDelete('cascade');
         });
     }
 
@@ -27,7 +27,6 @@ class AddEpicIdToStoriesTable extends Migration
     public function down()
     {
         Schema::table('stories', function (Blueprint $table) {
-            $table->dropForeign(['epic_id']);
             $table->dropColumn('epic_id');
         });
     }
