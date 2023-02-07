@@ -41,4 +41,9 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+    /* get the milestones for the user */
+    public function milestones()
+    {
+        return $this->hasMany(Milestone::class);
+    }
 }
