@@ -2,7 +2,8 @@
 
 namespace Database\Factories;
 
-use Illuminate\Database\Eloquent\Factories\Factory;
+use App\Models\Epic;
+use Illuminate\Validation\Factory;
 
 class StoryFactory extends Factory
 {
@@ -16,6 +17,8 @@ class StoryFactory extends Factory
         return [
             'name' => $this->faker->name(),
             'description' => $this->faker->sentence(30, true),
+            'epic_id' => Epic::factory()->create()->id,
+
         ];
     }
 }
